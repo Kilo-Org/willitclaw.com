@@ -1,95 +1,277 @@
 ---
 import Layout from '@layouts/Default.astro';
-import RecentBlogPosts from '@components/generic/RecentBlogPosts.astro';
-import MobileSocials from '@components/home/MobileSocials.astro';
-import { Pill } from '@eliancodes/brutal-ui';
-import { Button } from '@eliancodes/brutal-ui';
 import { Card } from '@eliancodes/brutal-ui';
 
-const builtWith = [
-  { name: 'Astro', url: 'https://astro.build/' },
-  { name: 'UnoCSS', url: 'https://uno.antfu.me/' },
+const videos = [
   {
-    name: 'Content Collections',
-    url: 'https://docs.astro.build/en/guides/content-collections/',
+    title: 'Win me a Mac Mini',
+    id: 'RxZTd1zVdzQ',
+    badge: 'NEW!',
+    badgeColor: 'red',
+    description: 'My friend Brian is hosting a "build the worst site" contest with a Mac Mini as the grand prize. I can\'t enter because that would be "illegal" and "unethical" since I work for Kilo. But my OpenClaw bot ScuttleBot doesn\'t work there (technically), so I\'ll have it enter!',
   },
-  { name: 'RSS', url: 'https://docs.astro.build/en/guides/rss/' },
   {
-    name: 'Sitemap',
-    url: 'https://docs.astro.build/en/guides/integrations-guide/sitemap/',
+    title: 'Learning Spanish',
+    id: 'Y4bBVzAXDRo',
+    badge: 'MUST SEE!',
+    badgeColor: 'yellow',
+    description: 'I just got back from Spain and my Spanish left a lot to be desired. Can OpenClaw help me brush up my skills for the next time I\'m with my amigos?!',
   },
-  { name: 'Vercel', url: 'https://vercel.com' },
-  { name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
+  {
+    title: 'Restaurant Reservations',
+    id: '0iTb3a6eqKg',
+    badge: 'AS SEEN ON YOUTUBE',
+    badgeColor: 'red',
+    description: 'Valentine\'s Day is coming up fast, and I\'ve been so busy setting up my OpenClaw bot that I forgot to book a dinner reservation for my wife and me. Can OpenClaw save the day by making a restaurant reservation over the phone? Let\'s find out!',
+    thumbnail: 'hqdefault',
+  },
+];
+
+const comingSoon = [
+  {
+    title: 'Olympics',
+    description: 'Can an AI sign up for the Olympic trials? We\'re about to find out.',
+    emoji: '🏅',
+  },
+  {
+    title: 'Taxes',
+    description: 'Filing taxes is painful enough for humans. Let\'s make a computer do it.',
+    emoji: '💰',
+  },
+  {
+    title: 'Triaging Pull Requests',
+    description: 'The real test: can AI handle a 47-file PR with no description at 4:59 PM on a Friday?',
+    emoji: '🔀',
+  },
+];
+
+const testimonials = [
+  {
+    quote: "I never thought AI could argue with the DMV! I watched the whole video with my mouth open.",
+    author: "Satisfied Customer",
+    location: "Sacramento, CA",
+  },
+  {
+    quote: "My parking ticket got refunded and all it cost me was my sense of what's real anymore.",
+    author: "Definitely A Real Person",
+    location: "Chicago, IL",
+  },
+  {
+    quote: "I showed this to my lawyer and he quit on the spot. 10/10 would recommend.",
+    author: "Greg T.",
+    location: "Miami, FL",
+  },
+  {
+    quote: "The restaurant reservation one had me in tears. The AI was more polite than I've ever been.",
+    author: "Former Yelp Reviewer",
+    location: "Portland, OR",
+  },
 ];
 ---
 
 <Layout
-  title='Home'
-  pageTitle='Brutal Theme | Home'
-  description='Brutal is a minimalistic, neobrutalism theme for Astro.'
+  title='Video Showcase'
+  pageTitle='WILL IT CLAW?™ — Testing AI on Ridiculous Tasks'
+  description='Will it Claw? — Testing AI agents on tasks no reasonable person would attempt. Watch AI make phone calls, book reservations, and fight bureaucracy.'
 >
-  <main class='bg-pink p-6'>
-    <MobileSocials />
-    <section id='about' class='grid md:grid-cols-8 gap-8 mt-4'>
-      <h2 class='hidden'>About Brutal</h2>
-      <div class='col-span-4'>
-        <Card>
-          <div class='flex flex-col justify-between items-start gap-4'>
-            <p class='mt-4 outfit text-2xl md:text-5xl lg:text-7xl'>
-              Brutal theme for <a
-                class='text-white'
-                target='_blank'
-                href='https://astro.build/'>Astro</a
-              >
-            </p>
-            <p class='mt-2 outfit text-xl md:text-3xl lg:text-5xl'>
-              A minimalistic, neobrutalism theme for Astro.
-            </p>
-            <Button target={'_self'} href='/blog/'>
-              Check out the blog &rarr;
-            </Button>
-          </div>
-        </Card>
-      </div>
-      <div class='col-span-2'>
-        <Card>
-          <h2 class='text-2xl md:text-4xl lg:text-6xl mb-8 dm-serif'>
-            Brutal is built with
-          </h2>
-          <ul class='flex gap-4 flex-wrap'>
-            {
-              builtWith.map((item) => (
-                <li>
-                  <Pill>
-                    <a
-                      class='sanchez'
-                      href={item.url}
-                      target='_blank'
-                      title={`Go to ${item.name}`}
-                    >
-                      {item.name}
-                    </a>
-                  </Pill>
-                </li>
-              ))
-            }
-          </ul>
-        </Card>
-      </div>
-      <div class='col-span-2'>
-        <Card>
-          <h2 class='text-2xl md:text-4xl lg:text-6xl mb-4 dm-serif'>
-            What is Brutal?
-          </h2>
-          <p class='poppins'>
-            Brutal is a theme built with Astro, UnoCSS by <a
-              href='https://www.elian.codes/'>Elian</a
-            >. It's a simple, fast, and modern theme that is easy to use and
-            customize. Mainly meant to power blogs and personal websites.
-          </p>
-        </Card>
+  <main class='bg-white'>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class='relative bg-red-600 p-8 md:p-16 text-center overflow-hidden scanlines'>
+      <!-- Background pattern -->
+      <div class='absolute inset-0 opacity-10' style='background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(0,0,0,0.1) 20px, rgba(0,0,0,0.1) 40px);'></div>
+
+      <div class='relative z-10'>
+        <h1 class='impact text-6xl md:text-8xl lg:text-9xl text-white mb-2' style='text-shadow: 5px 5px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000; letter-spacing: 0.02em;'>
+          WILL IT CLAW?<sup class='text-2xl md:text-4xl align-super'>™</sup>
+        </h1>
+
+        <p class='impact text-xl md:text-3xl text-yellow-300 mb-6 mt-4' style='text-shadow: 2px 2px 0 #000;'>
+          TESTING AI AGENTS ON TASKS NO REASONABLE PERSON WOULD ATTEMPT
+        </p>
+
+        <div class='flex flex-wrap justify-center gap-4 mb-8'>
+          <span class='inline-block bg-yellow-400 text-black px-4 py-2 border-3 border-black font-bold impact text-lg transform -rotate-2'>
+            REAL AI AGENTS
+          </span>
+          <span class='inline-block bg-white text-red-600 px-4 py-2 border-3 border-black font-bold impact text-lg transform rotate-1'>
+            REAL PHONE CALLS
+          </span>
+          <span class='inline-block bg-yellow-400 text-black px-4 py-2 border-3 border-black font-bold impact text-lg transform -rotate-1'>
+            REAL CHAOS
+          </span>
+        </div>
+
+        <a href='#videos' class='btn-3d btn-3d-yellow text-xl'>
+          WATCH NOW &darr;
+        </a>
       </div>
     </section>
-    <RecentBlogPosts />
+
+    <div class='section-divider'></div>
+
+    <!-- ==================== VIDEO GRID ==================== -->
+    <section id='videos' class='bg-gray-100 p-6 md:p-12'>
+      <div class='max-w-6xl mx-auto'>
+        <h2 class='impact text-4xl md:text-6xl text-center mb-2' style='text-shadow: 3px 3px 0 rgba(0,0,0,0.1);'>
+          FEATURED EPISODES
+        </h2>
+        <p class='text-center text-gray-600 poppins mb-10 text-lg'>
+          Each episode: one AI agent, one absurd task, zero guarantees.
+        </p>
+
+        <div class='grid md:grid-cols-1 lg:grid-cols-3 gap-8'>
+          {videos.map((video) => (
+            <div class='video-card'>
+              <!-- Starburst Badge -->
+              <div class:list={[
+                'starburst',
+                video.badgeColor === 'yellow' ? 'starburst-yellow' : '',
+                video.badge === 'AS SEEN ON YOUTUBE' ? 'starburst-lg' : '',
+              ]} style='top: -15px; right: -15px;'>
+                {video.badge}
+              </div>
+
+              <!-- Thumbnail -->
+              <a href={`https://www.youtube.com/watch?v=${video.id}`} target='_blank' class='block relative'>
+                <div class='relative overflow-hidden'>
+                  <img
+                    src={`https://img.youtube.com/vi/${video.id}/${video.thumbnail || 'maxresdefault'}.jpg`}
+                    alt={video.title}
+                    class='w-full aspect-video object-cover'
+                    loading='lazy'
+                  />
+                  <!-- Play button overlay -->
+                  <div class='absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/40 transition-colors'>
+                    <div class='w-16 h-16 md:w-20 md:h-20 bg-red-600 rounded-full flex items-center justify-center border-3 border-white'>
+                      <svg viewBox='0 0 24 24' fill='white' class='w-8 h-8 md:w-10 md:h-10 ml-1'>
+                        <path d='M8 5v14l11-7z'/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Card Content -->
+              <div class='p-5'>
+                <h3 class='impact text-xl md:text-2xl mb-2'>
+                  <span class='text-red-600'>Will it Claw?</span> — {video.title}
+                </h3>
+                <p class='poppins text-gray-700 text-sm mb-4'>{video.description}</p>
+                <a
+                  href={`https://www.youtube.com/watch?v=${video.id}`}
+                  target='_blank'
+                  class='btn-3d text-sm inline-block'
+                >
+                  WATCH NOW &rarr;
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <div class='section-divider'></div>
+
+    <!-- ==================== BUT WAIT THERE'S MORE ==================== -->
+    <section class='bg-black p-8 md:p-12 text-center'>
+      <div class='max-w-5xl mx-auto'>
+        <h2 class='impact text-4xl md:text-6xl text-yellow-400 mb-2 blink' style='text-shadow: 3px 3px 0 rgba(255,215,0,0.3);'>
+          BUT WAIT — THERE'S MORE!
+        </h2>
+        <p class='poppins text-gray-400 mb-10 text-lg'>
+          These episodes are cooking. Subscribe so you don't miss them.
+        </p>
+
+        <div class='grid md:grid-cols-3 gap-6'>
+          {comingSoon.map((item) => (
+            <div class='teaser-card p-6 text-left'>
+              <!-- Coming Soon Starburst -->
+              <div class='starburst starburst-yellow starburst-sm' style='top: -10px; right: -10px;'>
+                COMING SOON
+              </div>
+
+              <div class='text-5xl mb-4'>{item.emoji}</div>
+              <h3 class='impact text-2xl text-yellow-400 mb-2'>
+                Will it Claw? — {item.title}
+              </h3>
+              <p class='poppins text-gray-400 text-sm'>{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <div class='section-divider'></div>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class='bg-yellow-400 p-8 md:p-12'>
+      <div class='max-w-5xl mx-auto'>
+        <h2 class='impact text-4xl md:text-6xl text-center mb-2'>
+          WHAT PEOPLE ARE SAYING*
+        </h2>
+        <p class='text-center text-sm mb-10 poppins'>
+          *These testimonials are about as real as the AI's social skills.
+        </p>
+
+        <div class='grid md:grid-cols-2 gap-6'>
+          {testimonials.map((t) => (
+            <div class='testimonial-card'>
+              <div class='text-4xl mb-2'>&ldquo;</div>
+              <p class='comic-sans text-lg mb-4 italic'>
+                {t.quote}
+              </p>
+              <div class='border-t-2 border-black pt-3'>
+                <p class='impact text-sm'>— {t.author}</p>
+                <p class='poppins text-xs text-gray-500'>{t.location}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <div class='section-divider'></div>
+
+    <!-- ==================== CTA / SUBSCRIBE ==================== -->
+    <section class='bg-red-600 p-8 md:p-16 text-center relative overflow-hidden'>
+      <div class='absolute inset-0 opacity-5' style='background: repeating-linear-gradient(-45deg, transparent, transparent 15px, rgba(255,255,255,0.1) 15px, rgba(255,255,255,0.1) 30px);'></div>
+
+      <div class='relative z-10 max-w-3xl mx-auto'>
+        <h2 class='impact text-4xl md:text-6xl text-white mb-4' style='text-shadow: 3px 3px 0 #000;'>
+          DON'T MISS AN EPISODE
+        </h2>
+        <p class='poppins text-yellow-300 text-lg mb-8'>
+          Subscribe to the channel. Every episode is a new experiment in AI chaos.<br>
+          <span class='text-white text-sm'>No spam. Just claw.</span>
+        </p>
+
+        <div class='flex flex-col sm:flex-row gap-4 justify-center items-center'>
+          <a
+            href='https://www.youtube.com/@Kilo-Code'
+            target='_blank'
+            class='btn-3d btn-3d-yellow text-xl'
+          >
+            SUBSCRIBE ON YOUTUBE
+          </a>
+          <a
+            href='https://x.com/kilocode'
+            target='_blank'
+            class='btn-3d text-xl'
+            style='background: #000;'
+          >
+            FOLLOW ON X
+          </a>
+        </div>
+
+        <p class='comic-sans text-white/60 text-xs mt-8'>
+          Order now and receive absolutely nothing extra! Operators are standing by!
+          <br>
+          (There are no operators. It's all AI. That's the whole point.)
+        </p>
+      </div>
+    </section>
+
   </main>
 </Layout>

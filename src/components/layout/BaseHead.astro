@@ -1,6 +1,6 @@
 ---
-import LocalFont from '../generic/LocalFont.astro';
-import { ViewTransitions } from 'astro:transitions';
+import LocalFont from "../generic/LocalFont.astro";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -11,7 +11,7 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 if (Astro.props.ogImage === undefined) {
-  Astro.props.ogImage = new URL('/v1/generate/og/default.png', Astro.url);
+  Astro.props.ogImage = new URL("/v1/generate/og/default.png", Astro.url);
 }
 
 const { title, description, ogImage } = Astro.props;
@@ -19,35 +19,33 @@ const { title, description, ogImage } = Astro.props;
 
 <head>
   <LocalFont />
-  <meta charset='utf-8' />
-  <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <meta name='generator' content={Astro.generator} />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content={Astro.generator} />
 
-  <link
-    rel='alternate'
-    href='https://brutal.elian.codes/blog.xml'
-    type='application/rss+xml'
-  />
+  <meta name="title" content={`Will it Claw?™ | ${title}`} />
+  <meta name="description" content={description} />
 
-  <meta name='title' content={`willitclaw.com | ${title}`} />
-  <meta name='description' content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={`Will it Claw?™ | ${title}`} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
 
-  <meta property='og:type' content='website' />
-  <meta property='og:url' content={canonicalURL} />
-  <meta property='og:title' content={title} />
-  <meta property='og:description' content={description} />
-  <meta property='og:image' content={ogImage} />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={canonicalURL} />
+  <meta property="twitter:title" content={`Will it Claw?™ | ${title}`} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content={ogImage} />
 
-  <meta property='twitter:card' content='summary_large_image' />
-  <meta property='twitter:url' content={canonicalURL} />
-  <meta property='twitter:title' content={title} />
-  <meta property='twitter:description' content={description} />
-  <meta property='twitter:image' content={ogImage} />
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="icon" type="image/svg" href="/favicon.svg" />
 
-  <link rel='canonical' href={canonicalURL} />
-  <link rel='icon' type='image/svg' href='/favicon.svg' />
-
+   <<<<<<< HEAD
   <title>willitclaw.com | {title}</title>
+   =======
+  <title>Will it Claw?™ | {title}</title>
+   >>>>>>> f436341 (What happened)
 
   <ViewTransitions />
 

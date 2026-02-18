@@ -3,57 +3,58 @@ interface Props {
   pageTitle?: string;
 }
 
-const navigationItems = [
-  { name: 'Home', url: '/' },
-  { name: 'Blog', url: '/blog/' },
-];
-
 const socialIcons = [
   {
-    name: 'GitHub',
-    url: 'https://github.com/eliancodes/brutal',
-    icon: 'i-uil-github',
+    name: 'YouTube',
+    url: 'https://www.youtube.com/@Kilo-Code',
+    icon: 'i-uil-youtube',
   },
   {
     name: 'Twitter',
-    url: 'https://www.twitter.com/eliancodes',
+    url: 'https://x.com/kilocode',
     icon: 'i-uil-twitter',
   },
-  { name: 'RSS', url: '/feed.xml', icon: 'i-uil-rss' },
 ];
 
 const { pageTitle } = Astro.props;
 ---
 
-<header class='border-b-4 border-black flex justify-between p-6 items-center'>
+<header class='border-b-4 border-black flex justify-between p-4 md:p-6 items-center bg-red-600'>
   {pageTitle && <h1 class='hidden'>{pageTitle}</h1>}
-  <a href='/' title='Back to Home'>
-    <p class='righteous md:text-5xl'>Brutal</p>
+  <a href='/' title='Will it Claw?' class='flex items-center gap-2'>
+    <span class='text-2xl md:text-4xl' style='font-family: Impact, "Arial Black", sans-serif; color: #FFD700; text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;'>
+      WILL IT CLAW?™
+    </span>
   </a>
   <nav class='hidden md:inline-block'>
     <h2 class='hidden'>Navigation</h2>
-    <ul class='flex gap-8 poppins'>
-      {
-        navigationItems.map((item) => (
-          <li>
-            <a
-              class='text-lg font-medium hover:text-green hover:underline transition-all duration-150 ease-in-out'
-              href={item.url}
-              title={`Go to ${item.name}`}
-            >
-              {item.name}
-            </a>
-          </li>
-        ))
-      }
+    <ul class='flex gap-6 items-center'>
       {
         socialIcons.map((item) => (
           <li>
             <a
               href={item.url}
-              class='hover:text-green hover:underline transition-all duration-150 ease-in-out'
+              class='text-white hover:text-yellow-300 transition-all duration-150 ease-in-out'
               target='_blank'
-              title={`'See @ElianCodes on ${item.name}`}
+              title={`Follow on ${item.name}`}
+            >
+              <div class:list={[item.icon, 'w-7 h-7']} />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <nav class='md:hidden flex gap-4'>
+    <h2 class='hidden'>Mobile Navigation</h2>
+    <ul class='flex gap-4'>
+      {
+        socialIcons.map((item) => (
+          <li>
+            <a
+              href={item.url}
+              class='text-white'
+              target='_blank'
             >
               <div class:list={[item.icon, 'w-6 h-6']} />
             </a>
@@ -62,10 +63,34 @@ const { pageTitle } = Astro.props;
       }
     </ul>
   </nav>
-  <nav class='md:hidden flex'>
-    <h2 class='hidden'>Mobile Navigation</h2>
-    <ul>
-      <li><a href='/blog/'>Blog</a></li>
-    </ul>
-  </nav>
 </header>
+
+<!-- Scrolling Marquee -->
+<div class='marquee-container bg-yellow-400 border-b-4 border-black overflow-hidden'>
+  <div class='marquee-content'>
+    <span class='marquee-text' style='font-family: Impact, "Arial Black", sans-serif;'>
+      🔥 AS SEEN ON YOUTUBE 🦀 REAL AI AGENTS 🦞 REAL PHONE CALLS 🔥 UNBELIEVABLE RESULTS 🦀 YOU WON'T BELIEVE YOUR EARS 🦞 CALL NOW* 🔥 AS SEEN ON YOUTUBE 🦞 REAL AI AGENTS 🔥 REAL PHONE CALLS 🦀 UNBELIEVABLE RESULTS 🔥 YOU WON'T BELIEVE YOUR EARS 🦞 CALL NOW* 🦀 AS SEEN ON YOUTUBE 🔥 REAL AI AGENTS 🦀 REAL PHONE CALLS 🦞 UNBELIEVABLE RESULTS 🔥 YOU WON'T BELIEVE YOUR EARS 🦀 CALL NOW* 🦞
+    </span>
+  </div>
+</div>
+
+<style>
+  .marquee-container {
+    white-space: nowrap;
+  }
+  .marquee-content {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+  }
+  .marquee-text {
+    display: inline-block;
+    padding: 8px 0;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+</style>
