@@ -128,6 +128,7 @@ html {
 .btn-3d:hover {
   border-bottom-width: 3px;
   border-right-width: 3px;
+  margin-bottom: 3px;
   transform: translate(3px, 3px);
 }
 
