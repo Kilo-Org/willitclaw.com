@@ -13,20 +13,20 @@ const height = 630;
 const width = 1200;
 
 export const GET: APIRoute = async () => {
-  const link = 'https://brutal.elian.codes';
   const html = toReactElement(`
-  <div style="background-color: white; display: flex; flex-direction: column; height: 100%; padding: 3rem; width: 100%">
-    <div style="display:flex; height: 100%; width: 100%; background-color: white; border: 6px solid black; border-radius: 0.5rem; padding: 2rem; filter: drop-shadow(6px 6px 0 rgb(0 0 0 / 1));">
-      <div style="display: flex; flex-direction: column; justify-content: space-between; width: 100%; filter: drop-shadow()">
-        <div style="display: flex; flex-direction: column; gap: 0.75rem;">  
-          <p style="font-size: 48px;">Brutal</p>
-          <p style="font-size: 38px;">A theme for Astro</p>
-          <p style="font-size: 38px;">Brought to you by Elian</p>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: baseline; padding-top: -2rem;">
-          <p style="font-size: 32px">${link}</p>
-          <img src="https://www.elian.codes/assets/img/elian.jpg" width="200px" height="200px" style="border: 3px solid black; border-radius: 0.5rem;" />
-        </div>
+  <div style="background-color: #1a1a2e; display: flex; flex-direction: column; height: 100%; width: 100%; position: relative;">
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; padding: 3rem;">
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #16213e; border: 4px solid #e94560; border-radius: 1.5rem; padding: 3rem 4rem; filter: drop-shadow(8px 8px 0 rgba(233, 69, 96, 0.4));">
+        <p style="font-size: 100px; margin: 0; padding: 0; line-height: 1;">🦀</p>
+        <p style="font-size: 72px; color: #e94560; margin: 0; padding: 0; margin-top: 0.5rem; letter-spacing: -0.02em; line-height: 1.1;">willitclaw.com</p>
+        <p style="font-size: 32px; color: #a8a8b3; margin: 0; padding: 0; margin-top: 1rem; line-height: 1.2;">Will it claw? Only one way to find out.</p>
+      </div>
+      <div style="display: flex; gap: 1rem; margin-top: 2rem; align-items: center;">
+        <p style="font-size: 20px; color: #4a4a5a; margin: 0;">🦀</p>
+        <p style="font-size: 20px; color: #4a4a5a; margin: 0;">🦀</p>
+        <p style="font-size: 20px; color: #4a4a5a; margin: 0;">🦀</p>
+        <p style="font-size: 20px; color: #4a4a5a; margin: 0;">🦀</p>
+        <p style="font-size: 20px; color: #4a4a5a; margin: 0;">🦀</p>
       </div>
     </div>
   </div>
