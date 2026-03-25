@@ -25,6 +25,7 @@
   /* Infomercial Palette */
   --infomercial-red: #dc2626;
   --infomercial-yellow: #ffd700;
+  --infomercial-purple: #7c3aed;
   --infomercial-dark: #1a1a1a;
 }
 
@@ -143,6 +144,21 @@ html {
   color: black;
 }
 
+.btn-3d-purple {
+  background: var(--infomercial-purple);
+  color: white;
+}
+
+.btn-3d-white-outline {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+
+.btn-3d-white-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
 /* ---- Comic Sans for testimonials ---- */
 .comic-sans {
   font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", cursive;
@@ -241,7 +257,8 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       45deg,
       var(--secondary) 25%,
       transparent 25%,
@@ -324,7 +341,8 @@ html {
   background-color: var(--primary);
 }
 .window-pane::-webkit-scrollbar-track {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       45deg,
       var(--secondary) 25%,
       transparent 25%,
